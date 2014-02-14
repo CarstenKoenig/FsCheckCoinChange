@@ -30,3 +30,12 @@ Checking the minimality of the answer is a bit more tricky:
 
 ### Greedy algorithm
 We take as many of the coins with the highest value still less then the remaining amount until the remaining amount equals zero.
+
+### dynamic programming algorithm
+Based on this observation:
+
+Let f(a,c) be the minimal collection of coins we have to take if we want to change an amount a and can select from the first c coins (in ascending order).
+Then if coin(c) <= a we can either take coin(c) or we don't and so f(a,c) = minByCount [f(a,c-1), coin(c)::f(a-c,c)] - of course if coin(c) > a
+the only choice we have is not taking it!
+
+To optimize the operation a bit I memoized the values and used a tail-recursive version using continuation-passing-style.

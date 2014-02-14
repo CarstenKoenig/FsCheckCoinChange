@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="PropertyTests.fs" />
     <Compile Include="GreedyTests.fs" />
+    <Compile Include="DynProgTests.fs" />
     <None Include="packages.config" />
     <None Include="app.config" />
   </ItemGroup>

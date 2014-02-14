@@ -5,6 +5,9 @@ type Cents  =
     override c.ToString() = 
         match c with
         | Ct ct -> sprintf "%d ct" ct
+    member c.Value =
+        match c with
+        | Ct ct -> ct
 
 type Coin =
     | Euro of int
